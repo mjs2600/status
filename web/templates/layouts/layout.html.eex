@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html ng-app>
+  <head>
+    <title><%= @title %></title>
+    <link rel="shortcut icon" href="/static/favicon.ico" />
+  </head>
+  <body>
+    Here
+    <%= content_for(:template) %>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.3/angular.min.js"> </script>
+    <script src="/static/js/application.js"></script>
+</html>
