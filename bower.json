@@ -1,0 +1,22 @@
+{
+  "name": "status",
+  "version": "0.0.1",
+  "homepage": "https://github.com/mjs2600/status",
+  "authors": [
+    "Mike Simpson <mike.simpson@scimedsolutions.com>"
+  ],
+  "license": "AGPL",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  
+  "dependencies": {
+    "angular": "*",
+    "angular-resource": "*"
+  }
+}
