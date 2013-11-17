@@ -17,4 +17,10 @@ defmodule ApplicationRouter do
     #conn = conn.assign(:title, "Welcome to Dynamo!")
     render conn, "index.html"
   end
+
+  post "/post/new" do
+    #conn = conn.assign(:title, "Welcome to Dynamo!")
+    IO.puts conn.params[:status]
+    render conn, "index.html"
+  end
 end

@@ -1,14 +1,13 @@
-<div ng-controller="PostCtrl">
+<div>
   <h1>Raffler</h1>
 
-  <form ng-submit="addPost()">
-    <input type="text" ng-model="newPost.content">
-    <input type="submit" value="Post">
+  <form id="new-post">
+    <input type="text" id="status-input">
+    <input type="submit">
   </form> 
 
   <ul>
-    <li ng-repeat="post in posts">
-      {{post.content}}
+    <li>
     </li>
   </ul>
 

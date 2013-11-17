@@ -4,10 +4,9 @@ defmodule Status.Mixfile do
   def project do
     [ app: :status,
       version: "0.0.1",
+      build_per_environment: true,
       dynamos: [Status.Dynamo],
       compilers: [:elixir, :dynamo, :app],
-      env: [prod: [compile_path: "ebin"]],
-      compile_path: "tmp/#{Mix.env}/status/ebin",
       deps: deps ]
   end
 
@@ -19,6 +18,6 @@ defmodule Status.Mixfile do
 
   defp deps do
     [ { :cowboy, github: "extend/cowboy" },
-      { :dynamo, "0.1.0-dev", github: "elixir-lang/dynamo" } ]
+      { :dynamo, "~> 0.1.0-dev", github: "elixir-lang/dynamo" } ]
   end
 end

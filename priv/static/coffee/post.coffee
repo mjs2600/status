@@ -1,10 +1,24 @@
-app = angular.module("Status", ["ngResource"])
+$(document).ready ->
+  Post =
+    initialize: () ->
+      @uploadStatuses(@newPostStream())
+      @newPostStream().onValue (e) ->
+        console.log e
 
-app.factory "Post", ($resource)
-  $resource("/posts/:id", {id: "@id"}, {update: {method: "PUT"}} )
+    newPostStream: ->
+      newPostFormStream = $("#new-post").submitE()
+      newPostFormStream.onValue((e) -> e.preventDefault())
+      newPostFormStream.map (e) ->
+        $(e.target).find("#status-input").val()
 
-@PostCtrl = ($scope, Post) ->
-  $scope.addPost = ->
-    $scope.posts.unshift($scope.newPost)
-    $scope.newPost = {}
-  $scope.posts = Post.query()
+
+    uploadStatuses: (stream) ->
+      statusRequest = stream.map (status) ->
+        type: "POST"
+        url: "/post/new"
+        data: {status: status}
+      statusRequest.onValue (request) ->
+        console.log "hey"
+        $.ajax(request)
+
+  Post.initialize()
