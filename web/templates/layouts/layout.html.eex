@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html ng-app>
+<html ng-app="Status">
   <head>
     <title><%= @title %></title>
     <link rel="shortcut icon" href="/static/favicon.ico" />
