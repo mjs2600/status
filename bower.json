@@ -14,9 +14,11 @@
     "test",
     "tests"
   ],
-  
+
   "dependencies": {
     "angular": "*",
-    "angular-resource": "*"
+    "angular-resource": "*",
+    "bacon": "*",
+    "bacon.jquery": "*"
   }
 }
